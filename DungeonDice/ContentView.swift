@@ -22,24 +22,17 @@ struct ContentView: View {
     
     let horizontalPadding: CGFloat = 16
     let spacing: CGFloat = 0 // Between buttons
-    let buttonWidth: CGFloat = 115
+    let buttonWidth: CGFloat = 120
     
     var body: some View {
         GeometryReader(content: { geo in
             VStack {
                 
-                Text("Dungeon Dice")
-                    .font(.largeTitle)
-                    .fontWeight(.black)
-                    .foregroundStyle(.red)
+                titleView
                 
                 Spacer()
                 
-                Text(resultMessage)
-                    .font(.title)
-                    .fontWeight(.medium)
-                    .multilineTextAlignment(.center)
-                    .frame(height: 150)
+                resultMessageView
                 
                 Spacer()
                 
@@ -65,18 +58,18 @@ struct ContentView: View {
             }
             .padding()
             .onChange(of: geo.size.width, {
-                arrangeGridItems(geo: geo)
+                arrangeGridItems(deviceWidth: geo.size.width)
             })
             .onAppear{
-                arrangeGridItems(geo: geo)
+                arrangeGridItems(deviceWidth: geo.size.width)
             }
             .buttonStyle(.borderedProminent)
             .tint(.red)
         })
     }
     
-    func arrangeGridItems(geo: GeometryProxy) {
-        var screenWith = geo.size.width - horizontalPadding * 2 // padding on both sides
+    func arrangeGridItems(deviceWidth: CGFloat) {
+        var screenWith = deviceWidth - horizontalPadding * 2 // padding on both sides
         
         if Dice.allCases.count > 1 {
             screenWith += spacing
@@ -86,6 +79,25 @@ struct ContentView: View {
         let numberOfButtonsPerRow = Int(screenWith) / Int(buttonWidth + spacing)
         buttonsLeftOver = Dice.allCases.count % numberOfButtonsPerRow
     }
+}
+
+extension ContentView {
+    
+    private var titleView: some View {
+        Text("Dungeon Dice")
+            .font(.largeTitle)
+            .fontWeight(.black)
+            .foregroundStyle(.red)
+    }
+    
+    private var resultMessageView: some View {
+        Text(resultMessage)
+            .font(.title)
+            .fontWeight(.medium)
+            .multilineTextAlignment(.center)
+            .frame(height: 150)
+    }
+    
 }
 
 #Preview {
