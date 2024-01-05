@@ -11,6 +11,7 @@
 		616CD8D42B47092F001B5136 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 616CD8D32B47092F001B5136 /* ContentView.swift */; };
 		616CD8D62B470930001B5136 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 616CD8D52B470930001B5136 /* Assets.xcassets */; };
 		616CD8D92B470930001B5136 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 616CD8D82B470930001B5136 /* Preview Assets.xcassets */; };
+		616CD8FC2B477745001B5136 /* ButtonLayoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 616CD8FB2B477745001B5136 /* ButtonLayoutView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		616CD8D32B47092F001B5136 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		616CD8D52B470930001B5136 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		616CD8D82B470930001B5136 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		616CD8FB2B477745001B5136 /* ButtonLayoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonLayoutView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 			children = (
 				616CD8D12B47092F001B5136 /* DungeonDiceApp.swift */,
 				616CD8D32B47092F001B5136 /* ContentView.swift */,
+				616CD8FB2B477745001B5136 /* ButtonLayoutView.swift */,
 				616CD8D52B470930001B5136 /* Assets.xcassets */,
 				616CD8D72B470930001B5136 /* Preview Content */,
 			);
@@ -138,6 +141,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				616CD8D42B47092F001B5136 /* ContentView.swift in Sources */,
+				616CD8FC2B477745001B5136 /* ButtonLayoutView.swift in Sources */,
 				616CD8D22B47092F001B5136 /* DungeonDiceApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
