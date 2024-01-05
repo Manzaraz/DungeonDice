@@ -25,11 +25,10 @@ struct ButtonLayoutView: View {
         }
         
         typealias Value = CGFloat
-        
     }
     
     @State private var buttonsLeftOver = 0 // # of buttons in a less-than-full row
-
+    
     @Binding var resultMessage: String
     
     let horizontalPadding: CGFloat = 16
@@ -45,8 +44,8 @@ struct ButtonLayoutView: View {
                     }
                     .frame(width: buttonWidth)
                 }
-                
             }
+            
             HStack(alignment: .center, content: {
                 ForEach(Dice.allCases.suffix(buttonsLeftOver), id: \.self) {  dice in
                     Button("\(dice.rawValue)-sided") {
@@ -55,7 +54,6 @@ struct ButtonLayoutView: View {
                     .frame(width: buttonWidth)
                 }
             })
-            
         }
         .buttonStyle(.borderedProminent)
         .tint(.red)
@@ -67,8 +65,8 @@ struct ButtonLayoutView: View {
         }
         .onPreferenceChange(DeviceWidthPreferenceKey.self) { deviceWidth in
             arrangeGridItems(deviceWidth: deviceWidth)
-        }        
-     
+        }
+        
     }
     
     func arrangeGridItems(deviceWidth: CGFloat) {
@@ -82,7 +80,6 @@ struct ButtonLayoutView: View {
         let numberOfButtonsPerRow = Int(screenWith) / Int(buttonWidth + spacing)
         buttonsLeftOver = Dice.allCases.count % numberOfButtonsPerRow
     }
-    
 }
 #Preview {
     ButtonLayoutView(resultMessage: .constant(""))
